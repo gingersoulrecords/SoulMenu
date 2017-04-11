@@ -1,0 +1,8 @@
+
+.soulmenu-type-horizontal li{
+	display: inline-block;
+}
+
+.soulmenu-type-vertical li{
+	display: block;
+}
