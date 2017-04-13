@@ -21,14 +21,14 @@ class SoulMenu {
   }
   public static function shortcode( $args = array(), $content = '' ) {
     $defaults = array(
-      'type' => 'vertical',
+      'style' => 'vertical',
       'menu_class' => 'menu',
       'echo'  => false,
     );
     $args = wp_parse_args( $args, $defaults );
-    $type = $args['type'];
-    unset( $args['type'] );
-    $args['menu_class'] .= " soulmenu-type-{$type}";
+    $style = $args['style'];
+    unset( $args['style'] );
+    $args['menu_class'] .= " soulmenu-style-{$style}";
     return wp_nav_menu( $args );
   }
   public static function styles() {
