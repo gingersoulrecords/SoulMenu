@@ -95,11 +95,13 @@ class SoulMenu {
     $args = wp_parse_args( $args, $defaults );
     $style = $args['style'];
     unset( $args['style'] );
-    $args['menu_class'] .= " soulmenu-style-{$style}";
+    $args['menu_class'] .= " soulmenu soulmenu-style-{$style}";
     return wp_nav_menu( $args );
   }
   public static function styles() {
+    wp_register_script( 'soulmenu', plugins_url( 'soulmenu.js', __FILE__ ), array( 'jquery' ) );
 		wp_register_style( 'soulmenu', plugins_url( 'soulmenu.css', __FILE__ ) );
-		wp_enqueue_style( 'soulmenu' );
+    wp_enqueue_style( 'soulmenu' );
+		wp_enqueue_script( 'soulmenu' );
 	}
 }
