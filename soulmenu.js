@@ -48,10 +48,10 @@ jQuery(document).ready(function($) {
 
     if ( $submenu.hasClass('soulmenu-submenu--opened') ) {
       $this.removeClass('soulmenu-submenu-toggle--active');
-      $submenu.removeClass('soulmenu-submenu--opened').slideDown(500);
+      $submenu.removeClass('soulmenu-submenu--opened').slideUp(500);
     } else {
       $this.addClass('soulmenu-submenu-toggle--active');
-      $submenu.addClass('soulmenu-submenu--opened').slideUp(500);
+      $submenu.addClass('soulmenu-submenu--opened').slideDown(500);
     }
 
   });
