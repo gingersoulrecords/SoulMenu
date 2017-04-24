@@ -1,8 +1,198 @@
+/* Base Styling */
+/* ================================= */
 
-.soulmenu-style-horizontal li{
-	display: inline-block;
+.sm-visually-hidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
 }
 
+/* Horizontal Menu Styling */
+/* ================================= */
+
+.soulmenu-style-horizontal,
+.soulmenu-style-horizontal ul {
+  float: none;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+.soulmenu-style-horizontal li {
+  display: inline-block;
+  font-size: 16px; /* = 16px */
+  position: relative;
+}
+
+.soulmenu-style-horizontal li a {
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.soulmenu-style-horizontal > li > a {
+  color: #fff;
+}
+
+.soulmenu-style-horizontal > li:hover > a {
+  color: #000;
+  background-color: #fff;
+}
+
+.soulmenu-style-horizontal ul li {
+  display: block;
+  float: none;
+}
+
+.soulmenu-style-horizontal ul li a {
+  color: #000;
+}
+
+/* Hide Toggle on Desktop */
+@media only screen and (min-width: 992px) {
+  .soulmenu-submenu-toggle {
+    display: none !important;
+  }
+
+  .soulmenu-style-horizontal ul {
+    position: absolute;
+    max-height: 0px;
+    overflow: hidden;
+    top: 100%;
+    z-index: 1000;
+    min-width: 200px;
+    background-color: #fff;
+  }
+
+  .soulmenu-style-horizontal li:hover > ul {
+    max-height: 1000px;
+  }
+
+}
+
+@media only screen and (max-width: 991px) {
+  .soulmenu-style-horizontal {
+    clear: both;
+    padding-top: 15px;
+  }
+  
+  .soulmenu-style-horizontal li {
+    float: none;
+    width: 100%;
+    display: block;
+  }
+
+  .soulmenu-style-horizontal li a {
+    border: 1px solid #eee;
+    border-top: none;
+  }
+
+  .soulmenu-style-horizontal > li:first-child > a {
+    border-top: 1px solid #eee;
+  }
+
+  .soulmenu-style-horizontal ul {
+    display: none;
+    padding-left: 20px;
+  }
+
+  .soulmenu-style-horizontal li.menu-item-has-children {
+    position: relative;
+  }
+
+  .soulmenu-style-horizontal .soulmenu-submenu-toggle {
+    position: absolute;
+    right: 0;
+    height: 48px;
+    border: none;
+    background: none;
+    width: 50px;
+    border-left: 1px solid #eee
+  }
+
+  .soulmenu-style-horizontal .soulmenu-submenu-toggle:hover,
+  .soulmenu-style-horizontal .soulmenu-submenu-toggle:focus {
+    outline: none;
+    background-color: #eee;
+    transition: 0.25s all linear;
+  }
+
+  .soulmenu-style-horizontal .soulmenu-submenu-toggle:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -3px;
+    margin-left: -6px;
+    border-top: 6px solid #000;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+  }
+
+  /* .soulmenu-style-horizontal .soulmenu-submenu-toggle:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -6px;
+    margin-left: -6px;
+    border-top: 6px solid #fff;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+  } */
+}
+
+/* Menu Toggle */
+/* ================================= */
+
+.soulmenu-toggle {
+  border: none;
+  background: none;
+  float: right;
+  padding: 12px;
+  border-radius: 4px;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
+  transition: 0.25s all linear;
+}
+
+.soulmenu-toggle span {
+  width: 25px;
+  height: 4px;
+  display: block;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 3px;
+}
+
+.soulmenu-toggle span:last-child {
+  margin-bottom: 0px;
+}
+
+.soulmenu-toggle:hover,
+.soulmenu-toggle:focus {
+  outline: none;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.soulmenu-toggle.soulmenu-toggle--active {
+  box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Hide Toggle on Desktop */
+@media only screen and (min-width: 992px) {
+  .soulmenu-toggle {
+    display: none !important;
+  }
+}
+
+/* Vertical Menu Styling */
+/* ================================= */
+
 .soulmenu-style-vertical li{
-	display: block;
+  display: block;
 }
