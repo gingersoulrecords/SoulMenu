@@ -112,14 +112,15 @@
     border: none;
     background: none;
     width: 50px;
-    border-left: 1px solid #eee
+    border-left: 1px solid #eee;
+    transition: 0.25s all linear;
   }
 
   .soulmenu-style-horizontal .soulmenu-submenu-toggle:hover,
-  .soulmenu-style-horizontal .soulmenu-submenu-toggle:focus {
+  .soulmenu-style-horizontal .soulmenu-submenu-toggle:focus,
+  .soulmenu-style-horizontal .soulmenu-submenu-toggle--active {
     outline: none;
     background-color: #eee;
-    transition: 0.25s all linear;
   }
 
   .soulmenu-style-horizontal .soulmenu-submenu-toggle:before {
@@ -132,6 +133,11 @@
     border-top: 6px solid #000;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
+    transition: 0.25s all linear;
+  }
+
+  .soulmenu-style-horizontal .soulmenu-submenu-toggle--active:before {
+    transform: rotate(180deg);
   }
 
   /* .soulmenu-style-horizontal .soulmenu-submenu-toggle:after {
