@@ -75,7 +75,11 @@
 
 }
 
-@media only screen and (max-width: 991px) {
+/* 
+* COMMENTING OUT THIS CODE TO BE USED
+* LATER FOR THE VERTICAL MENU
+*/
+/*@media only screen and (max-width: 991px) {
   .soulmenu-style-horizontal {
     clear: both;
     padding-top: 15px;
@@ -150,7 +154,7 @@
             transform: rotate(180deg);
   }
 
-  /* .soulmenu-style-horizontal .soulmenu-submenu-toggle:after {
+   .soulmenu-style-horizontal .soulmenu-submenu-toggle:after {
     content: '';
     position: absolute;
     left: 50%;
@@ -160,8 +164,9 @@
     border-top: 6px solid #fff;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
-  } */
+  } 
 }
+*/
 
 /* Menu Toggle */
 /* ================================= */
