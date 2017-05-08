@@ -1,5 +1,77 @@
 jQuery(document).ready(function($) {
 
+
+	$('.soulmenu-style-horizontal').each(function(){
+		
+		$this = $(this);
+		
+		//make containers overflow visible
+		if($this.find('.menu-item-has-children').length > 0){
+			$this.parents('.ss-subsection, .ss-container').css('overflow','visible');
+		}
+		
+	    // Add Submenu Toggle
+	    $this.find('li.menu-item-has-children').each(function(i, el) {
+	
+	      var $li = $(el),
+	          $a = $li.children('a'),
+	          $submenuToggle = $('<span class="soulmenu-submenu-toggle"> > </span>');
+		      $submenuToggle.appendTo( $a );	
+		      
+		  $a.click(function(e){
+			  if($('html').hasClass('touchevents')){
+				  e.preventDefault();
+				  
+				  if($(this).parents('li').find('.sub-menu').hasClass('opened')){
+					
+					 $(this).parents('li').find('.sub-menu').removeClass('opened');	
+					 
+				  }else{
+					  
+					 $(this).parents('li').find('.sub-menu').addClass('opened');	
+
+				  }
+			  }
+		  });    
+	    });		
+	});
+
+	$('.soulmenu-style-vertical').each(function(){
+		
+		$this = $(this);
+		
+		//make containers overflow visible
+/*
+		if($this.find('.menu-item-has-children').length > 0){
+			$this.parents('.ss-subsection, .ss-container').css('overflow','visible');
+		}
+*/
+		
+	    // Add Submenu Toggle
+	    $this.find('li.menu-item-has-children').each(function(i, el) {
+	
+	      var $li = $(el),
+	          $a = $li.children('a'),
+	          $submenuToggle = $('<span class="soulmenu-submenu-toggle"> > </span>');
+		      $submenuToggle.appendTo( $a );	
+		      
+		  $a.click(function(e){
+				  e.preventDefault();
+				  
+				  if($(this).parents('li').find('.sub-menu').hasClass('opened')){
+					
+					 $(this).parents('li').find('.sub-menu').removeClass('opened');	
+					 
+				  }else{
+					  
+					 $(this).parents('li').find('.sub-menu').addClass('opened');	
+
+				  }
+		  });    
+	    });		
+	});
+
+/*
   // Insert SoulMenu Mobile Toggle
   $('.soulmenu').each(function(i, el) {
 
@@ -10,21 +82,15 @@ jQuery(document).ready(function($) {
       $smToggle.insertBefore( $sm );
     }
 
-    // Add Submenu Toggle
-    $sm.find('li.menu-item-has-children').each(function(i, el) {
+*/
 
-      var $li = $(el),
-          $submenuToggle = $('<button class="soulmenu-submenu-toggle"><span class="sm-visually-hidden"></span></button>');
 
-      if ( ! $li.prev('.soulmenu-toggle').length ) {
-        $submenuToggle.prependTo( $li );
-      }
-
-    });
     
   });
 
+
   // When SoulMenu Mobile Toggle is Clicked
+/*
   $(document).on('click', '.soulmenu-toggle', function(e) {
     e.preventDefault();
     var $this = $(this),
@@ -39,8 +105,10 @@ jQuery(document).ready(function($) {
     }
 
   });
+*/
 
   // When Submenu Toggle is Clicked
+/*
   $(document).on('click', '.soulmenu-submenu-toggle', function(e) {
     e.preventDefault();
     var $this = $(this),
@@ -55,5 +123,7 @@ jQuery(document).ready(function($) {
     }
 
   });
+*/
   
-});
+
+

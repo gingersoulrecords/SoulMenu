@@ -12,6 +12,7 @@
   position: absolute;
 }
 
+
 /* Horizontal Menu Styling */
 /* ================================= */
 
@@ -54,10 +55,17 @@
 }
 
 /* Hide Toggle on Desktop */
-@media only screen and (min-width: 992px) {
-  .soulmenu-submenu-toggle {
-    display: none !important;
-  }
+/* @media only screen and (min-width: 992px) { */
+
+span.soulmenu-submenu-toggle {
+    padding: 0 .5rem;
+    transform: rotate(90deg);
+    display: inline-block;
+}
+
+.soulmenu-style-horizontal ul.opened {
+    max-height: 1000px;
+}
 
   .soulmenu-style-horizontal ul {
     position: absolute;
@@ -69,11 +77,25 @@
     background-color: #fff;
   }
 
-  .soulmenu-style-horizontal li:hover > ul {
+
+
+  .no-touchevents .soulmenu-style-horizontal li:hover > ul {
     max-height: 1000px;
   }
 
+.soulmenu-style-vertical ul {
+    max-height: 0px;
+    overflow: hidden;
+    background-color: #fff;
+    margin: 0 0 0 1rem;
+    padding: 0;
 }
+
+.soulmenu-style-vertical ul.opened {
+    max-height: 1000px;
+}
+
+/* } */
 
 /* 
 * COMMENTING OUT THIS CODE TO BE USED
@@ -225,6 +247,8 @@
 /* Vertical Menu Styling */
 /* ================================= */
 
-.soulmenu-style-vertical li{
-  display: block;
+
+.soulmenu-style-vertical li {
+    display: block;
+    text-align: left;
 }
