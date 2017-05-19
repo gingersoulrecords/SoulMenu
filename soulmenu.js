@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
 	
 	      var $li = $(el),
 	          $a = $li.children('a'),
-	          $submenuToggle = $('<span class="soulmenu-submenu-toggle"> > </span>');
+	          $submenuToggle = $('<span class="soulmenu-submenu-toggle"> ▼ </span>');
 		      $submenuToggle.appendTo( $a );	
 		      
 		  $a.click(function(e){
@@ -52,7 +52,7 @@ jQuery(document).ready(function($) {
 	
 	      var $li = $(el),
 	          $a = $li.children('a'),
-	          $submenuToggle = $('<span class="soulmenu-submenu-toggle"> > </span>');
+	          $submenuToggle = $('<span class="soulmenu-submenu-toggle"> ▼ </span>');
 		      $submenuToggle.appendTo( $a );	
 		      
 		  $a.click(function(e){

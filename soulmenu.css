@@ -1,17 +1,19 @@
 /* Base Styling */
 /* ================================= */
 
-.sm-visually-hidden {
-  margin: -1px;
-  padding: 0;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip: rect(0, 0, 0, 0);
-  position: absolute;
+
+.soulmenu {
+	padding:0;
 }
 
+.soulmenu a{
+	text-decoration: none;
+	-webkit-transition: all 0.5s ease;
+-moz-transition: all 0.5s ease;
+-o-transition: all 0.5s ease;
+transition: all 0.5s ease;
+
+}
 
 /* Horizontal Menu Styling */
 /* ================================= */
@@ -59,8 +61,9 @@
 
 span.soulmenu-submenu-toggle {
     padding: 0 .5rem;
-    transform: rotate(90deg);
     display: inline-block;
+    font-size: 50%;
+    vertical-align: middle;
 }
 
 .soulmenu-style-horizontal ul.opened {
@@ -86,7 +89,7 @@ span.soulmenu-submenu-toggle {
 .soulmenu-style-vertical ul {
     max-height: 0px;
     overflow: hidden;
-    background-color: #fff;
+/*     background-color: #fff; */
     margin: 0 0 0 1rem;
     padding: 0;
 }
@@ -250,5 +253,9 @@ span.soulmenu-submenu-toggle {
 
 .soulmenu-style-vertical li {
     display: block;
-    text-align: left;
 }
+
+.soulmenu-style-vertical a {
+    display: block;
+}
+
