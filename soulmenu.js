@@ -71,18 +71,27 @@ jQuery(document).ready(function($) {
 	    });		
 	});
 
-/*
-  // Insert SoulMenu Mobile Toggle
-  $('.soulmenu').each(function(i, el) {
 
-    var $sm = $(el), 
-        $smToggle = $('<button class="soulmenu-toggle"><span class="sm-visually-hidden">Menu</span><span></span><span></span><span></span></button>');
-
-    if ( ! $sm.prev('.soulmenu-toggle').length ) {
-      $smToggle.insertBefore( $sm );
-    }
-
-*/
+	$window = $(window);
+	
+	delete FLBuilderLayout['_scrollToElementOnLinkClick'];
+	
+	$('.soulmenu a[href*="#"]').click(function(e){
+		e.preventDefault();
+		var $this = $(this),
+        href = $this.attr("href"),
+        topY = $(href).offset().top,
+        $thisRowHeight = $(this).parents('.fl-row').outerHeight();
+		TweenMax.to($window, 1, {
+		        scrollTo:{
+		            y: topY-$thisRowHeight-70, 
+		            autoKill: true
+		        }, 
+		        ease:Power3.easeOut 
+		     });
+		$('#soulbuttons-backdrop').click();     
+		return false;     
+	});
 
 
     
