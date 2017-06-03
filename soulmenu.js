@@ -78,6 +78,7 @@ jQuery(document).ready(function($) {
 	
 	$('.soulmenu a[href*="#"]').click(function(e){
 		e.preventDefault();
+		$('#soulbuttons-backdrop').click();     
 		var $this = $(this),
         href = $this.attr("href"),
         topY = $(href).offset().top,
@@ -89,7 +90,6 @@ jQuery(document).ready(function($) {
 		        }, 
 		        ease:Power3.easeOut 
 		     });
-		$('#soulbuttons-backdrop').click();     
 		return false;     
 	});
 
