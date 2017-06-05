@@ -77,20 +77,28 @@ jQuery(document).ready(function($) {
 	delete FLBuilderLayout['_scrollToElementOnLinkClick'];
 	
 	$('.soulmenu a[href*="#"]').click(function(e){
+
+		if($(this).attr("href") == "#"){
+			return false;
+		}else{
+			
 		e.preventDefault();
 		$('#soulbuttons-backdrop').click();     
 		var $this = $(this),
         href = $this.attr("href"),
-        topY = $(href).offset().top,
-        $thisRowHeight = $(this).parents('.fl-row').outerHeight();
+        topY = $(href).offset().top;
+        //$thisRowHeight = $(this).parents('.fl-row').outerHeight();
 		TweenMax.to($window, 1, {
 		        scrollTo:{
-		            y: topY-$thisRowHeight-70, 
-		            autoKill: true
+		            //y: topY-$thisRowHeight-70, 
+		            y: topY+window.onCanvasHeight+window.localNavHeight, 
+		            autoKill: false
 		        }, 
 		        ease:Power3.easeOut 
 		     });
-		return false;     
+		return false;  
+		
+		}   
 	});
 
 
