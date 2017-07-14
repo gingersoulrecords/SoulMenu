@@ -87,7 +87,8 @@ jQuery(document).ready(function($) {
 		var $this = $(this),
         href = $this.attr("href"),
         topY = $(href).offset().top;
-        //$thisRowHeight = $(this).parents('.fl-row').outerHeight();
+        console.log(window.onCanvasHeight);
+        console.log(window.localNavHeight);
 		TweenMax.to($window, 1, {
 		        scrollTo:{
 		            //y: topY-$thisRowHeight-70, 

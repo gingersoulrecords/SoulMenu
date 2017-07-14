@@ -9,6 +9,7 @@ Author URI: http://gingersoulrecords.com
 Text Domain: soulmenu
 */
 
+
 add_action( 'plugins_loaded', array( 'SoulMenu', 'init' ) );
 
 class SoulMenu {
@@ -17,8 +18,8 @@ class SoulMenu {
 		self::$plugin_path = plugin_dir_path( __FILE__ );
     add_shortcode( 'soulmenu',            array( 'SoulMenu', 'shortcode' ) );
     add_action( 'wp_enqueue_scripts', 		array( 'SoulMenu', 'styles' ) );
-
     add_action( 'admin_enqueue_scripts',  array( 'SoulMenu', 'admin_scripts' ) );
+    
     // TO DO: do a better Beaver Builder detection.
 		if ( isset( $_REQUEST['fl_builder'] ) && is_user_logged_in() ) {
 			add_action( 'wp_enqueue_scripts',  array( 'SoulMenu', 'admin_scripts' ) );
@@ -49,7 +50,7 @@ class SoulMenu {
 		return $plugin_array;
 	}
 
-  /**
+	/**
 	 * Enqueue SoulMenu WP Admin scripts
 	 */
 	public static function admin_scripts() {
