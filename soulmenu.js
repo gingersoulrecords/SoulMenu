@@ -78,20 +78,25 @@ jQuery(document).ready(function($) {
 	
 	$('.soulmenu a[href*="#"]').click(function(e){
 
+		
+
 		if($(this).attr("href") == "#"){
 			return false;
 		}else{
+		
+		if(!window.onCanvasHeight){window.onCanvasHeight = 0;}
+		if(!window.localNavHeight){window.localNavHeight = 0;}
 			
 		e.preventDefault();
 		$('#soulbuttons-backdrop').click();     
 		var $this = $(this),
         href = $this.attr("href"),
         topY = $(href).offset().top;
+        console.log(topY);
         console.log(window.onCanvasHeight);
         console.log(window.localNavHeight);
-		TweenMax.to($window, 1, {
+		TweenMax.to(window, 1, {
 		        scrollTo:{
-		            //y: topY-$thisRowHeight-70, 
 		            y: topY+window.onCanvasHeight+window.localNavHeight, 
 		            autoKill: false
 		        }, 
